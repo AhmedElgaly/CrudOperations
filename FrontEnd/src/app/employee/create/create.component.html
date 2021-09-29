@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Add New Employee</h1>
+
+    <a href="#" routerLink="/employee/index" class="btn btn-primary">Back</a>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="EmployeeName">Name:</label>
+            <input formControlName="EmployeeName" id="EmployeeName" type="text" class="form-control">
+            <div *ngIf="getForm.EmployeeName.touched && getForm.EmployeeName.invalid" class="alert alert-danger">
+                <div *ngIf="getForm.EmployeeName.errors.required">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="EmployeeAddress">Address</label>
+            <textarea formControlName="EmployeeAddress" id="EmployeeAddress" type="text" class="form-control">
+            </textarea>
+            <div *ngIf="getForm.EmployeeAddress.touched && getForm.EmployeeAddress.invalid" class="alert alert-danger">
+                <div *ngIf="getForm.EmployeeAddress.errors.required">Address is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="EmployeeContact">Contact</label>
+            <textarea formControlName="EmployeeContact" id="EmployeeContact" type="text" class="form-control">
+            </textarea>
+            <div *ngIf="getForm.EmployeeContact.touched && getForm.EmployeeContact.invalid" class="alert alert-danger">
+                <div *ngIf="getForm.EmployeeContact.errors.required">Contact is required.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

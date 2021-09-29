@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Delete Employee</h1>
+
+    <a href="#" routerLink="/employee/index" class="btn btn-primary">Back</a>
+
+    <div>
+        <strong>EmployeeId:</strong>
+        <p>{{ employee.employeeId }}</p>
+    </div>
+    <div>
+        <strong>EmployeeName:</strong>
+        <p>{{ employee.employeeName }}</p>
+    </div>
+
+    <div>
+        <strong>EmployeeAddress:</strong>
+        <p>{{ employee.employeeAddress }}</p>
+    </div>
+
+    <div>
+        <strong>EmployeeContact:</strong>
+        <p>{{ employee.employeeContact }}</p>
+    </div>
+    <button type="button" (click)="delete(employee.employeeId)" class="btn btn-danger">Delete</button>
+</div>

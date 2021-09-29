@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Employee CRUD</h1>
+
+    <a href="#" routerLink="/employee/create/" class="btn btn-success">Add New Employee</a>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>EmployeeId</th>
+            <th>EmployeeName</th>
+            <th>EmployeeAddress</th>
+            <th>EmployeeContact</th>
+            <th width="200px">Action</th>
+        </tr>
+        <tr *ngFor="let employee of employees">
+            <td>{{ employee.employeeId }}</td>
+            <td>{{ employee.employeeName }}</td>
+            <td>{{ employee.employeeAddress }}</td>
+            <td>{{ employee.employeeContact }}</td>
+            <td>
+                <a href="#" [routerLink]="['/employee/', employee.employeeId, 'delete']" class="btn btn-danger">Delete</a>
+                <a href="#" [routerLink]="['/employee/', employee.employeeId, 'edit']" class="btn btn-primary">Edit</a>
+
+            </td>
+        </tr>
+    </table>
+</div>
